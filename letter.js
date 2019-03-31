@@ -8,12 +8,19 @@ function Letter(char, guessed) {
             return '_';
         }
     };
+    // THIS DOESN'T WORK AND I DON'T KNOW WHY
     this.checkGuess = function(letter) {
         if (letter === this.char) {
             this.guessed = true;
             this.guessedCorrectly();
         }
+        console.log(this.char);
     }
 };
 let check = new Letter('a', false);
-console.log(check);
+console.log(check.guessedCorrectly());
+console.log(check.checkGuess('a'));
+
+module.exports = {
+    letter = Letter()
+}
