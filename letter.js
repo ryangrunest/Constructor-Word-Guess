@@ -20,10 +20,10 @@ function Letter(char, guessed) {
     }
 };
 
-let check = new Letter('b', false);
+// let check = new Letter('b', false);
 // console.log(check);
-console.log(check.checkGuess('b', check.char));
-console.log(check.guessed);
+// console.log(check.checkGuess('b', check.char));
+// console.log(check.guessed);
 
 
 module.exports = Letter;

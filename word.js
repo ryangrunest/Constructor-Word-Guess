@@ -16,7 +16,9 @@ function Word(word) {
     }
 }
 
-let checked = new Word('cheese');
-console.log(checked);
-checked.createLetters();
-checked.createString();
+// let checked = new Word('cheese');
+// console.log(checked);
+// checked.createLetters();
+// checked.createString();
+
+module.exports = Word;
