@@ -9,13 +9,21 @@ function Letter(char, guessed) {
         }
     };
     // THIS DOESN'T WORK AND I DON'T KNOW WHY
-    this.checkGuess = function(letter) {
-        if (letter === this.char) {
+    this.checkGuess = function(asdf, letter) {
+        if (asdf === letter) {
             this.guessed = true;
             this.guessedCorrectly();
+            console.log('yep!');
+        } else {
+            console.log('nope!')
         }
-        console.log(this.char);
     }
 };
+
+let check = new Letter('b', false);
+// console.log(check);
+console.log(check.checkGuess('b', check.char));
+console.log(check.guessed);
+
 
 module.exports = Letter;
