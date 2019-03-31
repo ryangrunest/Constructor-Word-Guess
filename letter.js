@@ -17,10 +17,5 @@ function Letter(char, guessed) {
         console.log(this.char);
     }
 };
-let check = new Letter('a', false);
-console.log(check.guessedCorrectly());
-console.log(check.checkGuess('a'));
 
-module.exports = {
-    letter = Letter()
-}
+module.exports = Letter;
