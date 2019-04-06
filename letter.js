@@ -13,9 +13,9 @@ function Letter(char, guessed) {
         if (asdf === letter) {
             this.guessed = true;
             this.guessedCorrectly();
-            console.log('yep!');
+
         } else {
-            console.log('nope!')
+
         }
     }
 };

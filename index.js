@@ -13,7 +13,7 @@ let wordArray = [
 
 const chosenWord = new word(wordArray[parseInt(Math.random() * (wordArray.length + 1))]);
 chosenWord.createLetters();
-console.log(chosenWord);
+// console.log(chosenWord);
 
 let guessAgain = function(question) {
     return inquirer
@@ -25,15 +25,25 @@ let guessAgain = function(question) {
       }
     ])
     .then(answers => {
-      // Use user feedback for... whatever!!
-      for (var i = 0; i < chosenWord.letterArray.length; i++) {
-          chosenWord.letterArray[i].checkGuess(answers.guess, chosenWord.letterArray[i].char);
-          if (answers.guess === chosenWord.letterArray[i].char) {
-              console.log('right!');
-          } else {
-              console.log('nope!');
-          }
-      }
+        if (answers.guess === 'exit') {
+            return console.log('You have chosen to exit the game. Lets play again soon!');
+        }
+        let loadArr = [];
+        // Use user feedback for... whatever!!
+        for (var i = 0; i < chosenWord.letterArray.length; i++) {
+            chosenWord.letterArray[i].checkGuess(answers.guess, chosenWord.letterArray[i].char);
+            if (answers.guess === chosenWord.letterArray[i].char) {
+                loadArr.push(chosenWord.letterArray[i].guessedCorrectly());
+            } else {
+                loadArr.push(chosenWord.letterArray[i].guessedCorrectly());
+            }
+        }
+        console.log(loadArr.join(''));
+        if (loadArr.includes('_')) {
+            guessAgain();
+        } else {
+            console.log('you won!');
+        }
     });
 }
 
@@ -64,10 +74,10 @@ inquirer
                 console.log("Alright, let's get to it!");
                 guessAgain();
             } else if (answers.question === false) {
-                console.log('alright. Maybe later.');
+                console.log('Alright. Maybe later.');
             }
         })
     } else if (answers.question === false)  {
-        console.log('awkward...');
+        console.log('Awkward...');
     }
 })
