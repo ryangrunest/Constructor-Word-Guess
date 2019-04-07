@@ -2,6 +2,8 @@
 
 Guess continuously from an array of words taken from Dictionary.com's Word of the Day! Expand your vocabulary, and expand your comfortably with running apps from the terminal. 
 
+
+![gif of video](https://media.giphy.com/media/2vknKg9iTZb7OxTsFy/giphy.gif)
 ## This is a node based game that you run from your terminal, Using:
 - two constructors
 - three files
